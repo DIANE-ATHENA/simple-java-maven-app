@@ -18,5 +18,10 @@ pipeline {
         junit 'target/surefire-reports/*.xml'
       }
     }
+    stage('informe') {
+      steps {
+        emailext(subject: 'Haloha', body: 'Haloha', from: 'LAPIN@ubuntu.com', to: 'maryse.ruas@gmail.com')
+      }
+    }
   }
 }
