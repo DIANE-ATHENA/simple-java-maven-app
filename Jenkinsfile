@@ -23,5 +23,10 @@ pipeline {
         emailext(subject: 'Haloha', body: 'Haloha', from: 'LAPIN@ubuntu.com', to: 'maryse.ruas@gmail.com')
       }
     }
+    stage('AnalyserSonarQube') {
+      steps {
+        waitForQualityGate()
+      }
+    }
   }
 }
